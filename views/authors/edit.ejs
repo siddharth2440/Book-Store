@@ -1,0 +1,6 @@
+<form class="shadow-md w-[50%] m-auto flex flex-col pt-9 h-[50vh] object-contain items-start  justify-start tracking-normal bg-gradient-to-tr from-[#1a0642] via-[#271861] via-[#312b82] via-[#373fa6] via-[#3855cb] via-[#345ad5] via-[#2e60e0] via-[#2565ea] via-[#225adb] via-[#1e50cc] via-[#1945bd] to-[#133bae] rounded-md" action="/authors/<%-alreadySavedAuthor[0]._id %>/edit?_method=PUT" method="POST">
+    <label class="text-teal-50 font-[500] relative text-center mt-7 ml-4 text-xl">Edit <span class="ml-2 text-violet-400 tracking-tight text-3xl"><%-alreadySavedAuthor[0].name%></span>
+    </label>
+    <input type="text" name="name" class="rounded-md py-1 ml-[12rem] px-3 shadow-md mt-9 w-[20rem] h-[2rem]" placeholder="Name....">
+    <button type="submit" class="text-white bg-[#EEA47F] ml-[20rem] shadow-md px-2 text-[1.2rem] rounded-md mt-3">Update</button>
+</form>

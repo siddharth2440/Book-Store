@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking the remixicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css" integrity="sha512-ZH3KB6wI5ADHaLaez5ynrzxR6lAswuNfhlXdcdhxsvOUghvf02zU1dAsOC6JrBTWbkE1WNDNs5Dcfz493fDMhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+        <% if (locals) { %>
+            <%- locals.title%>
+        <% }else{ %>
+            <h1>Document</h1>
+         <% } %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main class="relative top-[9vh] min-h-[100vh] w-full bg-gradient-to-tr from-[#1a0642] via-[#271861] via-[#312b82] via-[#373fa6] via-[#3855cb] via-[#345ad5] via-[#2e60e0] via-[#2565ea] via-[#225adb] via-[#1e50cc] via-[#1945bd] to-[#133bae]">
+        <%- include('../partials/errorMessage') %>
+    <%- body %> 
+    </main>
+    <%- include('../partials/footer') %>
+<script src="/JS/script.js"></script>
+</body>
+</html>
+

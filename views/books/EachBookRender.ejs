@@ -1,0 +1,28 @@
+<section class="flex flex-col items-center justify-center w-[80vh] bg-gradient-to-tr from-[#1a0642] via-[#271861] via-[#312b82] via-[#373fa6] via-[#3855cb] via-[#345ad5] via-[#2e60e0] via-[#2565ea] via-[#225adb] via-[#1e50cc] via-[#1945bd] to-[#133bae] shadow-lg rounded-b-lg rounded-br-[2rem] rounded-bl-[2rem] m-auto  py-7 px-5">
+    <div class="TitleOfTheBook mt-9 text-3xl font-[700] text-green-50 capitalize py-2 px-1 self-start ml-5 flex flex-col items-start justify-center">
+        <h1 class="textShadow"><%-BookFoundByTheId.title %></h1>
+        <div class="backBtn"></div>
+    </div>
+    <div class="mainContentOfTheBook mt-4 grid grid-cols-3 gap-8">
+        <div class="leftSide flex flex-col gap-5 align-start justify-start">
+            <img src="/uploads/<%-BookFoundByTheId.coverImageName %>" class="h-[18rem] rounded-md shadow-2xl w-[12rem]" alt="">
+            <div class="btns flex align-start justify-start gap-3">
+                <a href="/books/<%-BookFoundByTheId._id %>/edit" class="text-[0.9rem] shadow-md px-3 py-1 rounded-md self-start bg-gradient-to-tr from-[#ff4d00] via-[#ff4600] via-[#ff3e00] via-[#ff3500] via-[#ff2a00] text-white font-[700]">Edit</a>
+                <form action="/books/<%-BookFoundByTheId._id %>/?_method=DELETE" method="POST">
+                    <button type="submit" class="text-[0.9rem] shadow-md px-3 py-1 rounded-md self-start bg-gradient-to-tr from-[#4a104c] via-[#721671] via-[#9e1897] via-[#cd14be] via-[#ff00e5] shadow-lg text-white font-[700]">Delete</button>
+                </form>
+            </div>
+        </div>
+        <div class="rightSide w-[20vw] py-2 px-1">
+            <div class="author">
+                <h3 class="font-[700] text-violet-400 text-xl">Author: <span class="font-[400] text-white opacity-7 text-[1rem]"><%-BookFoundByTheId.Book[0].name %></span></h3>
+            </div>
+            <div class="publishDate">
+                <h3 class="font-[700] text-violet-400 text-xl">Publish Date: <span class="text-white font-[400] opacity-7 text-[1rem]"><%-BookFoundByTheId.publishDate %></span></h3>
+            </div>
+            <div class="description">
+                <h3 class="font-[700] text-violet-400 text-xl">Description: <span class="text-white font-[400] opacity-7 text-[1rem]"><%- BookFoundByTheId.description%></span></h3>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="min-h-min shadow-md w-[90vw] border-blue-50 m-auto my-auto rounded-md py-4 bg-gradient-to-tl from-[#1a0642] via-[#271861] via-[#312b82] via-[#373fa6] via-[#3855cb] via-[#345ad5] via-[#2e60e0] via-[#2565ea] via-[#225adb] via-[#1e50cc] via-[#1945bd] to-[#133bae]">
+    <h1 class="text-3xl text-center font-extrabold text-white">New Book</h1>
+    <form action="/books/newBook" method="POST" class="flex flex-col items-start justify-between gap-7" enctype="multipart/form-data">
+        <div class="title flex flex-row items-center justify-normal ml-7">
+            <label class="text-white text-[1.2rem] shadow-md font-semibold">Title</label>
+            <input type="text" name="title" class="bg-gradient-to-lt from-[#9059ff] via-[#271861] via-[#312b82] via-[#373fa6] via-[#3855cb] via-[#345ad5] via-[#2e60e0] via-[#2565ea] via-[#225adb] via-[#1e50cc] via-[#1945bd] to-[#133bae] ml-3 rounded-sm w-[20vw] h-[1.4rem] px-2 py-2">
+        </div>
+        <div class="option title flex flex-row items-center justify-normal ml-7">
+            <label class="title text-white text-[1.2rem] shadow-md font-semibold">Author</label>
+            <select name="author" class="ml-3 rounded-sm">
+                <% authors.forEach(author => {%>
+                    <% if (author.id==books.author) { %>
+                    <option selected value="<%- author.id %>" label="<%-author.name %>" class="rounded-sm w-[20vw] h-[1.4rem] px-2 py-2"></option>
+                    <% }else{ %>
+                    <option value="<%-author.id %>" label="<%-author.name %>"></option>
+                    <% } %>
+                <%}) %>
+            </select>
+        </div>
+        <div class="publishDate flex flex-row items-center justify-normal ml-7">
+            <label class="title text-white text-[1.2rem] shadow-md self-start font-semibold">Publish Date</label>
+            <input type="date" name="publishDate" value="<%-books.publishDate %>" class="title ml-3 rounded-sm w-[20vw] h-[1.4rem] px-2 py-2">
+        </div>
+
+        <div class="pageCount title flex items-center flex-row justify-normal ml-7">
+            <label class="text-white text-[1.2rem] shadow-md font-semibold">Page Count</label>
+            <input type="number" class="ml-3 rounded-sm w-[20vw] h-[1.4rem] px-2 py-2" name="pageCount" min="1" value="book.pageCount">
+        </div>
+
+        <div class="coverPage title flex items-center flex-row justify-normal ml-7">
+            <label class="text-white text-[1.2rem] shadow-md font-semibold">Cover</label>
+            <input type="file" class="ml-3 rounded-sm w-[20vw] h-[3rem] px-2 py-2" name="coverPage" required>
+        </div>
+        <div class="description title flex items-center flex-row align-center justify-around ml-7">
+            <label class="text-white text-[1.2rem] shadow-md font-semibold self-start">Description</label>
+            <textarea name="description" class="ml-3 rounded-sm w-[20vw] h-[8rem] p-2" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="btns">
+            <a href="/books" class="text-white font-bold text-[1.2rem] shadow-2xl ml-3 p-2 rounded-md bg-gradient-to-b from-[#0750be] via-[#075bc9] via-[#0967d5] via-[#0d72e0] to-[#127eeb] ">Cancel</a>
+            <button type="submit" class="text-white font-bold text-[1.2rem] ml-3 shadow-2xl p-2 rounded-md bg-gradient-to-tr from-[#e81733] via-[#ee0b44] via-[#f20356] via-[#f50667] to-[#f61378]">Create</button>
+        </div>
+    </form>
+</section>

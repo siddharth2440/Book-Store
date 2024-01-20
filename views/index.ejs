@@ -1,0 +1,12 @@
+<section>
+    <div class="frontPageSection grid grid-cols-4 gap-4 py-9">
+        <% combinedDetailsOfAuthors.forEach(element => {%>
+            <a href="/books/<%-element._id %>" class="eachCover py-8">
+                <div class="imgSide flex gap-4 flex-col items-center justify-center">
+                    <img class="rounded-md shadow-2xl" src="/uploads/<%-element.coverImageName %>" alt="">
+                </div>
+                <h1 class="text-center text-violet-50 text-[1.2rem] font-[600] ">-<%-element.as[0].name %></h1>
+            </a>
+        <%}); %>
+    </div>
+</section>

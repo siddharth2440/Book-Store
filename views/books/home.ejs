@@ -1,0 +1,31 @@
+<section class="flex flex-col items-center justify-center w-[50%] m-auto rounded-md shadow-md gap-8 pb-5     bg-gradient-to-tl from-[#1a0642] via-[#271861] via-[#312b82] via-[#373fa6] via-[#3855cb] via-[#345ad5] via-[#2e60e0] via-[#2565ea] via-[#225adb] via-[#1e50cc] via-[#1945bd] to-[#133bae]">
+    <h1 class="text-black font-bold text-2xl text-center capitalize">Search Books</h1>
+    <form action="/books" class="flex flex-col items-center justify-start">
+        <div class="title mt-7">
+            <label for="title" class="text-white text-[1.2rem] font-bold">Title: </label>
+            <input type="text" name="SearchBookName" class="py-1 px-2 rounded-md ml-6">
+        </div>
+        <div class="published mt-3">
+            <label for="published" class="text-white text-[1.2rem] font-bold ml-6">published After</label>
+            <input type="date" name="publishedDate" class="py-1 px-2 rounded-md">
+        </div>
+        <div class="published mt-3">
+            <label for="published" class="text-white text-[1.2rem] font-bold ml-6">published Before</label>
+            <input type="date" name="publishedDate" class="py-1 px-2 rounded-md">
+        </div>  
+        <button type='submit' class="px-2 text-white text-[1rem] shadow mt-4 py-1 rounded-md bg-blue-400">Search</button>
+    </form>
+
+    <section id="AllBooks" class="grid grid-cols-4 gap-4">
+        <% books.forEach(book=>{%>
+            <div class="showEachBook">
+                <div class="div ">
+                    <a href="/books/<%-book._id%>">
+                        <img class="object-cover h-48 w-96 py-1 px-2 " src="/uploads/<%-book.coverImageName%>" alt="<%-book.coverImageName %>">
+                    </a>
+                    <h4 class="text-white text-2xl font-[500] capitalize text-center"><%-book.title %></h4>
+                </div>
+            </div>
+        <%})%>
+    </section>
+</section>

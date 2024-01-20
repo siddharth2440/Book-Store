@@ -1,0 +1,24 @@
+<div class="flex flex-row items-center justify-start gap-4 pt-8 pl-6">
+    <a href="/authors" class="text-white bg-[#01539D] shadow-2xl px-2 py-1 rounded-md">Back</a>
+    <a href="/authors/<%-authorID%>/edit" class=" bg-[#EEA47F] shadow-2xl px-4 py-1 font-[600] rounded-md">Edit</a>
+    <form action="/books/<%-authors._id %>/edit?_method=DELETE" method="POST">
+        <button type="submit" class="text-white bg-[#101920] shadow-2xl px-2 py-1 rounded-md">Delete</button>
+    </form>
+</div>
+
+<div id="showsTheBookswrittenByTheParticularAuthor">
+    <h1 class="text-3xl font-[700] capitalize mt-5 ml-5">--<%-authors[0].name %></h1>
+    <h1 class="capitalize ml-6 text-[0.89rem] opacity-50 font-[500]"><%-TotalBookswritten %> Books</h1>
+    <% if (book.length>0) { %>
+        <div class="grid grid-cols-5 gap-4 px-6 mt-9 p-2">
+            <% book.forEach(element => {%>
+                <a href="/books/<%-element._id %>" class="contain flex flex-col items-center justify-center h-[45vh] w-[15vw]">
+                    <img src="/uploads/<%-element.coverImageName %>" alt="" class="h-[35vh] object-cover rounded-md shadow-2xl">
+                    <h1 class="text-white text-center text-[0.9rem] shadow-2xl font-[600] m-2"><%- element.title %></h1>
+                </a>
+            <%}); %>
+        </div>
+    <% }else{ %>
+        <h2 class="flex items-center justify-center text-3xl font-[600]">No Book is found</h2>
+    <%}%>
+</div>

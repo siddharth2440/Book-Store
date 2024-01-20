@@ -1,0 +1,17 @@
+<nav class="fixed top-0 bg-blue-900 grid grid-cols-3 items-center gap-9 h-[9vh] w-full z-10">
+    <div id="nav__container" class="inline">
+        <h2 class="text-3xl font-bold pl-5 text-blue-200 transition-all inline-block delay-150 duration-200 ease-in-out hover:text-violet-600"><a href="/authors">Mybrary</a></h2>
+    </div>
+    <ul class="grid grid-cols-4 gap-3">
+        <li class="font-[700] text-[1.2rem] pl-3 shadow-white"><a href="/books" class="">Books</a></li>
+        <li class="font-[700] text-[1.2rem] pl-3"><a href="/books/newBook">Add Book</a></li>
+        <li class="font-[700] text-[1.2rem] pl-3 transition delay-150 duration-300 ease-in-out hover:border-b-white"><a href="/authors">Authors</a></li>
+        <li class="font-[700] text-[1.2rem] pl-1"><a href="/authors/new">Add Author</a></li>
+    </ul>
+    <div class="ml-4" id="SearchBar">
+        <form action="/" method="get">
+            <label for="searchTerm" class="text-white"></label>
+            <input class=" border-b-2 border-b-white bg-transparent h-9 px-5 transition-all duration-300 delay-300 ease-in focus:bg-white hover:rounded-lg focus:border-none border-t-0 border-l-0 border-r-0" type="text" placeholder="Search...." name="searchInput">
+        </form>
+    </div>
+</nav>

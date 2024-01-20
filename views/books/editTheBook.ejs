@@ -1,0 +1,43 @@
+<section class= "rounded-b-2xl w-[85vw] m-auto h-[60vh] px-6 py-3 shadow-lg bg-gradient-to-tr from-[#3e233e] via-[#4f2a5a] via-[#5c327a] via-[#613e9e] via-[#5a4dc6] via-[#504fd8] via-[#3d52ea] via-[#0a55fd] via-[#1248fb] via-[#1f39f8] via-[#2c26f4] to-[#3800ef]">
+    <h1 class="text-3xl font-[700] text-green-100 textShadow opacity-[7] text-center capitalize">Edit The Book</h1>
+    <form action="/books/<%-books[0]._id%>/edit?_method=PUT"  method="POST" class=" pt-[3rem] pb-[4rem] flex flex-col items-center justify-start gap-3">
+        <div class="title self-start">
+            <label for="title" class="text-[1rem] font-[700] text-gray-100 tracking-wider ml-[4rem]">Title :</label>
+            <input type="text" name="title" required>
+        </div>
+        <div class="author self-start">
+            <label for="" class="text-[1rem] font-[700] text-gray-100 tracking-wider ml-[4rem]">Author :</label>
+            <select name="author" required>
+                <% authors.forEach(element => { %>
+                    <% authors.forEach(author => { %>
+                        <% if (author.id === books.author) { %>
+                          <option selected label="<%= author.name %>">
+                        <% } else { %>
+                          <option label="<%= author.name %>">
+                        <% } %>
+                      <% }) %>
+                <% }) %>
+            </select>
+        </div>
+        <div class="pageCount self-start">
+            <label for="count" class="text-[1rem] font-[700] text-gray-100 tracking-wider ml-[4rem] capitalize">Page Count :</label>
+            <input type="number" name="pageCount" required>
+        </div>
+        <div class="publishDate self-start">
+            <label for="date" class="text-[1rem] font-[700] text-gray-100 tracking-wider ml-[4rem] capitalize">Publish Date :</label>
+            <input type="date" name="publishDate" required>
+        </div>
+        <div class="imageCover self-start">
+            <label for="" class="ml-[4rem] text-[1rem] font-[700] text-gray-100 tracking-wider capitalize">Cover :</label>
+            <input type="file" name="coverImage">
+        </div>
+        <div class="description self-start">
+            <label for="description" class="text-[1rem] font-[700] text-gray-100 tracking-wider ml-[4rem] capitalize">description :</label>
+            <input type="text" name="description" required>
+        </div>
+        <div class="divBtns flex items-center justify-start gap-7">
+            <a href="/" class="text-[0.9rem] text-white font-[700] shadow-md px-3 py-1 rounded-md self-start bg-gradient-to-tr from-[#12366a] via-[#023866] via-[#003a61] via-[#003b5b] to-[#073c55]">Back</a>
+            <button type="submit" class="text-[0.9rem] shadow-md px-3 py-1 rounded-md self-start bg-gradient-to-tr from-[#ff4d00] via-[#ff4600] via-[#ff3e00] via-[#ff3500] via-[#ff2a00] text-white font-[700]">Update</button>
+        </div>
+    </form>
+</section>
